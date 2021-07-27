@@ -1,0 +1,109 @@
+{% extends 'base.html' %} {% load static %}
+<body>
+  {% block content %}
+  <div class="statusBar">
+    <button class="statusBar--homeBtn">H.GG</button>
+    <p class="statusBar--title">상품신청</p>
+    <div class="statusBar--pageBtn__login">
+      <button>상품등록</button>
+      <button>로그아웃</button>
+      <button>내 정보</button>
+    </div>
+  </div>
+  <div class="appForm-box">
+    <div class="appForm">
+      <form>
+        <fieldset>
+          <ul>
+            <li class="appForm--list">
+              <label for="goods-name">상품명</label>
+
+              <input
+                type="text"
+                name="goods-name"
+                autofocus
+                placeholder="상품명을 입력해주세요."
+                required
+              />
+            </li>
+            <li class="appForm--list">
+              <label for="recru-people">모집인원</label>
+
+              <input
+                type="text"
+                name="recru-people"
+                autofocus
+                placeholder="모집인원을 입력해주세요."
+                required
+              />
+            </li>
+            <li class="appForm--list">
+              <label for="recru-period">모집기간</label>
+
+              <input
+                type="date"
+                name="recru-period"
+                autofocus
+                placeholder="모집기간을 입력해주세요."
+                required
+              />
+            </li>
+            <li class="appForm--list">
+              <label for="price">가격</label>
+
+              <input
+                type="text"
+                name="price"
+                autofocus
+                placeholder="가격을 입력해주세요."
+                required
+              />
+            </li>
+            <li class="appForm--list">
+              <label for="picture">상품사진</label>
+
+              <input type="file" name="picture" />
+            </li>
+            <li class="appForm--list">
+              <label for="goods-info">상품설명</label>
+
+              <textarea
+                name="goods-info"
+                cols="100"
+                rows="30"
+                autofocus
+                placeholder="상품설명을 입력해주세요."
+              ></textarea>
+            </li>
+            <li class="appForm--list">
+              <label for="tag">태그</label>
+
+              <input
+                type="text"
+                name="tag"
+                autofocus
+                placeholder="태그를 입력해주세요.(Ex. #패딩 #돕바)"
+              />
+            </li>
+            <li class="appForm--list">
+              <label for="kakao-link">오픈 카카오톡 링크</label>
+
+              <input
+                type="url"
+                name="kakao-link"
+                autofocus
+                placeholder="오픈 카카오톡 링크를 입력해주세요."
+              />
+            </li>
+          </ul>
+
+          <div class="">
+            <button type="submit">등록하기</button>
+            <button type="reset">취소하기</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+</body>

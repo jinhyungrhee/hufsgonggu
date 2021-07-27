@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'css/semantic/semantic.css' %}" rel="stylesheet" />
+    <title>H.GG</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/semantic/semantic.min.css' %}"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'css/semantic/semantic.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    {% block content %} {% endblock %}
+  </body>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-container-content">
+        <div>
+          &copy; COPYRIGHT © 2021 HUFS LIKELION 9th ALL RIGHT RESERVED<br />
+          Office in Korea 81, Oe-daero Mohyeon-myeon, Cheoin-gu, Yongin-si,
+          Gyeonggi-do, Korea<br />
+          Contact us : hufsglobal@likelion.org
+        </div>
+        <button class="ui facebook button" style="margin-top: 20px">
+          <i class="facebook icon"></i>
+          Facebook
+        </button>
+        <button class="ui instagram button" style="margin-top: 20px">
+          <i class="instagram icon"></i>
+          Instagram
+        </button>
+      </div>
+    </div>
+  </footer>
+</html>

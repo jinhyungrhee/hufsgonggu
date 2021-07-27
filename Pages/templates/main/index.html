@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% load static %}
+<body>
+  {% block content %}
+  <div class="statusBar">
+    <button class="statusBar--homeBtn">H.GG</button>
+    <div class="ui icon input" style="width: 40%">
+      <input type="text" placeholder="Search..." />
+      <i class="circular search link icon"></i>
+    </div>
+    <!-- 버튼위치관련 -->
+    <div class="statusBar--pageBtn">
+      <button>상품등록</button>
+      <button>로그인</button>
+    </div>
+  </div>
+
+  <div class="menubar">
+    <div
+      class="ui violet three item inverted menu"
+      style="background-color: #6524ff"
+    >
+      <a class="active item"> 상품게시판 </a>
+      <a class="item"> 후기게시판 </a>
+      <a class="item"> 공지사항 </a>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img id="banner1" src="{% static 'images/banner/banner1.png' %}" />
+        </div>
+        <div class="swiper-slide">
+          <img id="banner2" src="{% static 'images/banner/banner2.png' %}" />
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+  <script>
+    var mySwiper = new Swiper(".swiper-container", {
+      loop: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      // And if we need scrollbar
+    });
+  </script>
+  <div class="ui divider"></div>
+  <div class="content-header">
+    <p>Top 3</p>
+    <div class="ui violet two item menu">
+      <a class="item"> Home </a>
+      <a class="item"> Messages </a>
+    </div>
+  </div>
+  {% endblock %}
+</body>
