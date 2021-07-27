@@ -15,6 +15,7 @@
   width: 70%;
   position: relative;
   left: 5rem;
+  top: 2rem;
 }
 
 .appForm-box {
@@ -24,7 +25,16 @@
   justify-content: center;
   height: 90rem;
 }
-
+.form-box {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50rem;
+  position: relative;
+  top: 5rem;
+}
 form {
   display: flex;
   flex-direction: column;
