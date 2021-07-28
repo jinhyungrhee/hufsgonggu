@@ -111,3 +111,14 @@ textarea {
   font-size: 1rem;
   padding: 0.5rem;
 }
+
+.score {
+  box-sizing: border-box;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.score i {
+  cursor: pointer;
+  color: var(--brand-color);
+}

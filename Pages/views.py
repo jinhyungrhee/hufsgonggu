@@ -15,3 +15,6 @@ def purchase(request):
 
 def register(request):
     return render(request, 'goods/goodsRegister.html')
+
+def review(request):
+    return render(request, 'review/review-post.html');
