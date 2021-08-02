@@ -18,3 +18,6 @@ def register(request):
 
 def review(request):
     return render(request, 'review/review-post.html');
+
+def registerComplete(request):
+    return render(request, 'complete/register-complete.html')

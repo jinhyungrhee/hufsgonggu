@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/* * {
-  box-sizing: border-box;
-} */
+/* index page 상품게시판 ~ 공지사항 네비게이션 바 */
 .navbar {
   display: flex;
   align-items: center;
@@ -20,18 +17,17 @@
   float: left;
 }
 .navbar li a {
-  margin: 20px;
+  margin: 1.25rem;
   text-decoration: none;
   color: #545454;
 }
 
 footer {
   width: 100%;
-  /* position: relative;
-  bottom: 0; */
 }
+/* footer 컨텐츠 감싸는 박스 */
 .footer-container {
-  height: 200px;
+  height: 12.5rem;
   color: white;
   background-color: #6524ff;
   display: flex;
@@ -41,6 +37,7 @@ footer {
   text-align: center;
   margin-top: 1rem;
 }
+
 .footer-container-content {
   margin-top: 3.125rem;
 }
@@ -65,9 +62,9 @@ footer {
 }
 
 .content-header {
-  margin: 20px;
-  padding: 20px;
-  font-size: 20px;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: #6524ff;
 }

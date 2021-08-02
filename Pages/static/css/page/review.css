@@ -1,0 +1,14 @@
+.score {
+  box-sizing: border-box;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.score i {
+  cursor: pointer;
+  color: var(--brand-color);
+}
+
+.review-box {
+  height: 60rem;
+}

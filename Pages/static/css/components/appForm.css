@@ -1,15 +1,21 @@
-/* 전체 폼 박스 */
-.form-box {
+/* purchase.html goodsRegister.html 공통css */
+/* 전체 폼을 감싸는 박스 */
+.appForm-box,
+.form-box,
+.review-box {
   box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: auto;
+  height: 90rem;
+}
+/* 상품 신청 페이지 폼 높이 */
+.appForm-box {
+  height: 90rem;
 }
 
+/* 폼 컨텐츠 중앙정렬을 위해 position 지정 */
 .appForm {
-  /* border: 1px solid #707070; */
   box-sizing: border-box;
   height: 50vh;
   width: 70%;
@@ -18,23 +24,6 @@
   top: 2rem;
 }
 
-.appForm-box {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 90rem;
-}
-.form-box {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 50rem;
-  position: relative;
-  top: 5rem;
-}
 form {
   display: flex;
   flex-direction: column;
@@ -61,6 +50,9 @@ form {
   border: none;
 }
 
+/* 상품신청 페이지 CSS */
+
+/* 수령방법 폼 레이아웃 */
 .appForm--list__option {
   width: 20%;
   display: flex;
@@ -74,12 +66,6 @@ form {
   margin-right: 1rem;
 }
 
-/* 수령방법 폼 관련 옵션 */
-input[type="radio"] {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--brand-color);
-}
 /* 신청버튼 */
 form button {
   box-sizing: border-box;
@@ -112,13 +98,13 @@ textarea {
   padding: 0.5rem;
 }
 
-.score {
-  box-sizing: border-box;
-  width: 40%;
-  display: flex;
-  justify-content: space-between;
-}
-.score i {
-  cursor: pointer;
+/* 수령방법 폼 관련 옵션 */
+input[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
   color: var(--brand-color);
+}
+/* 상품 등록 페이지 폼 높이 */
+.form-box {
+  height: 50rem;
 }
