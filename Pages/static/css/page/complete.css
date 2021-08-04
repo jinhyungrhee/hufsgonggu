@@ -44,8 +44,6 @@
 /* 상품 보러가기 버튼 */
 .completeBtn button {
   background-color: var(--brand-color);
-  width: 16rem;
-  height: 10rem;
   border-radius: 10px;
   border: none;
   color: white;
