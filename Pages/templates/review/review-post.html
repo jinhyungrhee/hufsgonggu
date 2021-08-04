@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% load static %}
+<body>
+  {% block content %}
+  <div class="statusBar">
+    <button class="statusBar--homeBtn">H.GG</button>
+    <p class="statusBar--title">상품후기</p>
+    <!-- 버튼위치관련 -->
+    <div class="statusBar--pageBtn">
+      <button>상품등록</button>
+      <button>로그인</button>
+    </div>
+  </div>
+
+  <div class="review-box">
+    <div class="appForm">
+      <form>
+        <div class="appForm--list">
+          <label>후기제목</label>
+          <input
+            class="review-board--inputBox"
+            placeholder="제목을 입력해주세요."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='제목을 입력하세요.'"
+          />
+        </div>
+        <div class="appForm--list">
+          <label>후기내용</label>
+          <input
+            class="review-board--posting"
+            placeholder="내용을 입력해주세요."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='내용을 입력해주세요.'"
+          />
+        </div>
+
+        <div class="appForm--list">
+          <label>상품사진</label>
+          <input
+            class="review-board--inputBox"
+            placeholder="상품사진을 등록해주세요."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='상품사진을 등록해주세요.'"
+          />
+        </div>
+
+        <div class="appForm--list">
+          <label>카테고리</label>
+          <input
+            class="review-board--inputBox"
+            placeholder="카테고리 선택"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='카테고리 선택'"
+          />
+        </div>
+
+        <div class="appForm--list">
+          <label>업체정보</label>
+          <input
+            class="review-board--inputBox"
+            placeholder="업체정보를 입력해주세요."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='업체정보를 입력해주세요.'"
+          />
+        </div>
+
+        <div class="appForm--list">
+          <label>배송기간</label>
+          <input
+            class="review-board--inputBox"
+            placeholder="배송기간을 등록해주세요."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='배송기간을 등록해주세요.'"
+          />
+        </div>
+
+        <div class="appForm--list">
+          <label>가격</label>
+          <input
+            class="review-board--inputBox"
+            placeholder="가격을 등록해주세요."
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='가격을 등록해주세요.'"
+          />
+        </div>
+
+        <div class="appForm--list">
+          <label>만족도</label>
+          <div class="score">
+            <i class="far fa-star fa-3x score10" onclick="scoring(this);"></i>
+            <i class="far fa-star fa-3x score8" onclick="scoring(this);"></i>
+            <i class="far fa-star fa-3x score6" onclick="scoring(this);"></i>
+            <i class="far fa-star fa-3x score4" onclick="scoring(this);"></i>
+            <i class="far fa-star fa-3x score2" onclick="scoring(this);"></i>
+          </div>
+        </div>
+
+        <div class="submitBtn">
+          <button class="BtnBox">등록하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'js/score.js' %}"></script>
+  {% endblock %}
+</body>
