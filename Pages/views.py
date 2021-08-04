@@ -21,3 +21,6 @@ def review(request):
 
 def registerComplete(request):
     return render(request, 'complete/register-complete.html')
+
+def loginIndex(request):
+    return render(request, 'login/login-main.html')

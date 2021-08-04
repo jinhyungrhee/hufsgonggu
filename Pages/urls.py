@@ -25,4 +25,5 @@ urlpatterns = [
     path('register/', register, name="register"),
     path('review/', review, name="review"),
     path('complete/',registerComplete, name="registerComplete"),
+    path('loginIndex/', loginIndex, name="loginIndex")
 ]
