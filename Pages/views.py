@@ -24,3 +24,6 @@ def registerComplete(request):
 
 def loginIndex(request):
     return render(request, 'login/login-main.html')
+
+def userInformation(request):
+    return render(request, 'login/input-user-information.html')
