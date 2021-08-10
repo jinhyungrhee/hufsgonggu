@@ -2,7 +2,7 @@
 <body>
   {% block content %}
   <div class="statusBar">
-    <button class="statusBar--homeBtn">H.GG</button>
+    <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">H.GG</button>
   </div>
   <div class="completeImage">
     <img src="{% static 'images/logo.png' %}" width="40%" height="100%" />
