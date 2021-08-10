@@ -2,7 +2,7 @@
 <body>
   {% block content %}
   <div class="statusBar">
-    <button class="statusBar--homeBtn">H.GG</button>
+    <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">H.GG</button>
     <p class="statusBar--title">상품등록</p>
     <div class="statusBar--pageBtn__login">
       <button>상품등록</button>
@@ -99,7 +99,7 @@
 
           <div>
             <button type="submit">등록하기</button>
-            <button type="reset">취소하기</button>
+            <button type="reset" onclick="location.href='{% url 'index' %}'">취소하기</button>
           </div>
         </fieldset>
       </form>

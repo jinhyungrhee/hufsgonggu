@@ -2,15 +2,15 @@
 <body>
   {% block content %}
   <div class="statusBar">
-    <button class="statusBar--homeBtn">H.GG</button>
+    <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">H.GG</button>
     <div class="ui icon input" style="width: 40%">
       <input type="text" placeholder="Search..." />
       <i class="circular search link icon"></i>
     </div>
     <!-- 버튼위치관련 -->
     <div class="statusBar--pageBtn">
-      <button>상품등록</button>
-      <button>로그인</button>
+      <button onclick="location.href='{% url 'register' %}'">상품등록</button>
+      <button onclick="location.href='{% url 'loginIndex' %}'">로그인</button>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
     >
       <a class="active item"> 상품게시판 </a>
       <a class="item"> 후기게시판 </a>
-      <a class="item"> 공지사항 </a>
+      <a class="item" href="{% url 'noticeBoard' %}"> 공지사항 </a>
     </div>
     <div class="swiper-container">
       <div class="swiper-wrapper">

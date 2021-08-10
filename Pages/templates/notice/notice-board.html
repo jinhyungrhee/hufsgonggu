@@ -2,12 +2,12 @@
 <body>
   {% block content %}
   <div class="statusBar">
-    <button class="statusBar--homeBtn">H.GG</button>
+    <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">H.GG</button>
     <p class="statusBar--title">공지사항</p>
     <!-- 버튼위치관련 -->
     <div class="statusBar--pageBtn">
-      <button>상품등록</button>
-      <button>로그인</button>
+      <button onclick="location.href='{% url 'register' %}'">상품등록</button>
+      <button onclick="location.href='{% url 'loginIndex' %}'">로그인</button>
     </div>
   </div>
 
