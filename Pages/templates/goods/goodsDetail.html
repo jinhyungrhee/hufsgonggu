@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load static %}
+<body>
+    {% block content %}
+    <div class="statusBar">
+        <button
+            class="statusBar--homeBtn"
+            onclick="location.href='{% url 'index' %}'"
+        >
+            H.GG
+        </button>
+        <div class="ui icon input" style="width: 40%">
+            <input type="text" placeholder="Search..." />
+            <i class="circular search link icon"></i>
+        </div>
+        <!-- 버튼위치관련 -->
+        <div class="statusBar--pageBtn">
+            <button onclick="location.href='{% url 'register' %}'">
+                상품등록
+            </button>
+            <button onclick="location.href='{% url 'loginIndex' %}'">
+                로그인
+            </button>
+        </div>
+    </div>
+    <div class="detailBox">
+        <article class="detailBox--body">
+            <header class="detailBox--name">Boo 인형</header>
+            <p class="detailBox--article">
+                <img
+                    src="{% static 'images/banner/banner1.png' %}"
+                    height="80%"
+                    width="100%"
+                />
+                <img
+                    src="{% static 'images/banner/banner1.png' %}"
+                    height="80%"
+                    width="100%"
+                />
+                <img
+                    src="{% static 'images/banner/banner1.png' %}"
+                    height="80%"
+                    width="100%"
+                />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                asperiores velit laborum reiciendis itaque, ipsum architecto
+                facilis maiores odit, deleniti consectetur assumenda, nisi
+                blanditiis dicta illo labore. Eveniet, voluptatem atque. Neque a
+                nisi, laudantium quae expedita earum cumque! Id accusamus
+                numquam natus quia quidem, totam odit unde cumque eos,
+                distinctio corporis saepe inventore repudiandae illo nobis
+                dolores soluta temporibus. Possimus? Enim ea, eveniet ad debitis
+                sunt cumque. Blanditiis repellat animi voluptatum iure quae
+                tempora doloremque magnam ea veritatis reprehenderit quidem,
+                nihil dolorem necessitatibus, nobis deserunt neque explicabo
+                numquam voluptatibus consequatur!
+            </p>
+        </article>
+        <section class="goodsInfo">
+            <div class="goodsInfo--tags">
+                <button>태그</button>
+                <button>태그</button>
+            </div>
+            <!-- 데이터 받아오기 -->
+            <div class="goodsInfo--crewPrice">
+                <header>모집인원</header>
+                <span>30명</span>
+            </div>
+            <div class="goodsInfo--crewPrice">
+                <header>가격</header>
+                <span>30000원</span>
+            </div>
+            <div class="ui violet progress"><div class="bar"></div></div>
+
+            <div class="goodsInfo--likeBtn">
+                <button>
+                    <i class="far fa-thumbs-up fa-3x"></i>
+                    <p>56</p>
+                </button>
+            </div>
+            <div class="goodsInfo--shareBtn">
+                <button><i class="fas fa-share-alt"></i>공유하기</button>
+                <button>판매자 정보</button>
+            </div>
+            <div class="goodsInfo--submit">
+                <button type="submit">신청하기</button>
+            </div>
+        </section>
+    </div>
+    {% endblock %}
+</body>
