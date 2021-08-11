@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% load static %}
+<body>
+    {% block content %}
+    <div class="statusBar">
+        <button
+            class="statusBar--homeBtn"
+            onclick="location.href='{% url 'index' %}'"
+        >
+            H.GG
+        </button>
+    </div>
+    <form id="registerBox">
+        <fieldset>
+            <div class="registerBox--list">
+                <label>이메일 작성</label>
+                <input
+                    required
+                    type="email"
+                    placeholder="example@example.com"
+                />
+            </div>
+
+            <div class="registerBox--list">
+                <label>비밀번호 설정</label>
+                <input
+                    required
+                    type="password"
+                    placeholder="비밀번호를 입력해주세요."
+                    id="firstInput"
+                />
+            </div>
+            <div class="registerBox--list">
+                <label>비밀번호 재입력</label>
+                <input
+                    type="password"
+                    required
+                    placeholder="비밀번호를 다시 입력해주세요"
+                    id="secondInput"
+                />
+            </div>
+            <div class="registerBox--list">
+                <label>닉네임</label>
+                <input
+                    required
+                    type="text"
+                    placeholder="닉네임을 입력해주세요."
+                />
+            </div>
+            <div class="registerBox--list">
+                <label>카카오톡 ID</label>
+                <input
+                    required
+                    type="text"
+                    placeholder="카카오톡 ID를 입력해주세요."
+                />
+            </div>
+        </fieldset>
+        <button id="registerBtn">
+            <i class="fas fa-check xs"></i>회원가입
+        </button>
+    </form>
+
+    {% endblock %}
+</body>
