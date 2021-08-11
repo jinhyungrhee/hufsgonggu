@@ -37,4 +37,7 @@ urlpatterns = [
     path('loginIndex/', loginIndex, name="loginIndex"),
     path('userInformation/', userInformation, name="userInformation"),
     path('signup/', signup, name="signup"),
+    path('goodsDetail/', goodsDetail, name="goodsDetail"),
+    path('reviewBoard/', reviewBoard, name="reviewBoard"),
+    path('submitComplete/',submitComplete,name="submitComplete")
 ]
