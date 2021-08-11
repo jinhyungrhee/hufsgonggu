@@ -36,3 +36,11 @@ def userInformation(request):
 def signup(request):
     return render(request, 'signup/signup.html')
 
+def goodsDetail(request):
+    return render(request, 'goods/goodsDetail.html')
+
+def reviewBoard(request):
+    return render(request, 'review/review-board.html')
+
+def submitComplete(request):
+    return render(request, 'complete/submit-complete.html')
