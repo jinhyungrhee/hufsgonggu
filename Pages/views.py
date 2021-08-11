@@ -30,3 +30,4 @@ def userInformation(request):
 
 def signup(request):
     return render(request, 'signup/signup.html')
+
