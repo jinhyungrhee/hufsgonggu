@@ -1,0 +1,38 @@
+.goodsBox {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.goodsList {
+    box-sizing: border-box;
+    height: auto;
+    display: grid;
+    grid-auto-rows: minmax(300px, auto);
+    grid-template-columns: repeat(4, 300px);
+    grid-gap: 20px 30px;
+}
+
+.goodsList--item {
+    margin: 0 auto;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.goodsList--item:hover {
+    box-shadow: 0 1px 10px 0 lightgray;
+    border: 2px solid #f4f4f4;
+    border-top: none;
+    border-bottom: none;
+}
+.goodsList--name {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.goodsList--item > img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
