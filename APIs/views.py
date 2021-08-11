@@ -13,7 +13,7 @@ class ProductCreate(CreateView):
     model = Product
     fields = '__all__'
     template_name = 'goods/goodsRegister.html'
-    success_url = '../complete/'
+    success_url = '../complete1/'
 
     def post(self, request, *args, **kwargs):
         self.object = None
