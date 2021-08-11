@@ -2,6 +2,7 @@
 @import "components/notice.css";
 @import "components/variable.css";
 @import "components/appForm.css";
+@import "components/signupInput.css";
 /* page */
 @import "page/reset.css";
 @import "page/status-bar.css";
