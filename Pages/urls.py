@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-from APIs.views import ProductCreate, ProductList
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList
 
 urlpatterns = [
     path('noticeBoard/', noticeBoard, name="noticeBoard"),
@@ -26,9 +26,14 @@ urlpatterns = [
     # 수정 : path('register/', register, name="register"),
     path('register/', ProductCreate.as_view(), name='register'),
     #상품리스트 보여주기
-    path('productList',ProductList.as_view(), name='productList'),
-    path('review/', review, name="review"),
-    path('complete/',registerComplete, name="registerComplete"),
+    path('productList/',ProductList.as_view(), name='productList'),
+    path('review/', ReviewCreate.as_view(), name="review"),
+    #리뷰리스트 보여주기
+    path('reviewList/',ReviewList.as_view(), name='reviewList'),
+    # 상품등록 완료 페이지
+    path('complete1/',registerComplete, name="registerComplete"),
+    # 리뷰등록 완료 페이지
+    path('complete2/',reviewComplete, name="reviewComplete"),
     path('loginIndex/', loginIndex, name="loginIndex"),
     path('userInformation/', userInformation, name="userInformation"),
     path('signup/', signup, name="signup"),

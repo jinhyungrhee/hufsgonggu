@@ -15,12 +15,17 @@ def purchase(request):
 
 def register(request):
     return render(request, 'goods/goodsRegister.html')
-
+# review 테스트중
 def review(request):
     return render(request, 'review/review-post.html');
 
+# 상품등록완료
 def registerComplete(request):
     return render(request, 'complete/register-complete.html')
+
+# 리뷰등록완료
+def reviewComplete(request):
+    return render(request, 'complete/review-complete.html')
 
 def loginIndex(request):
     return render(request, 'login/login-main.html')

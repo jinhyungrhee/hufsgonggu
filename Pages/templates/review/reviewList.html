@@ -20,7 +20,6 @@
       style="background-color: #6524ff"
     >
       <a class="active item" href="{% url 'productList' %}"> 상품게시판 </a>
-        <!-- 리뷰 등록페이지 임시 연결 -->
       <a class="item" href="{% url 'reviewList' %}"> 후기게시판 </a>
       <a class="item" href="{% url 'noticeBoard' %}"> 공지사항 </a>
     </div>
@@ -52,11 +51,25 @@
   </script>
   <div class="ui divider"></div>
   <div class="content-header">
-    <p>Top 3</p>
+    <!-- Top3 제거 -->
     <div class="ui violet two item menu">
       <a class="item"> Home </a>
       <a class="item"> Messages </a>
     </div>
   </div>
+      <!-- DB에 저장된 내용 for문으로 가져오기 -->
+      <!-- ListView가 object_list context변수 전달-->
+      {% for review in object_list %}
+          <div>
+              <h1>{{ review.title }}</h1>
+              <!-- image없을 때 에러처리 (이미지 required하면 없어도 될 듯) -->
+              {% if review.image %}
+                  <p><img src="{{ review.image.url }}" alt=""/></p>
+              {% endif %}
+          </div>
+      {% endfor %}
+      <div>
+        <button><a href="{% url 'review' %}">후기쓰기</a></button>
+      </div>
   {% endblock %}
 </body>
