@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Pages.apps.PagesConfig',
+    'APIs.apps.ApisConfig',
 ]
 
 MIDDLEWARE = [
@@ -119,10 +120,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 현재 static 파일 경로
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Pages', 'static')
 ]
+# static 파일 모으는 곳
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 이용자가 업로드한 파일들 모으는 곳
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# 이용자에게 업로드한 파일 보여줄 때 맨 앞에 보이는 URL
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
