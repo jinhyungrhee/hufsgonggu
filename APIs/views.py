@@ -18,7 +18,6 @@ class ProductList(ListView):
 
 class ProductCreate(LoginRequiredMixin, CreateView):
     login_url = '/login/'
-    redirect_field_name = ''
     model = Product
     fields = '__all__'
     template_name = 'goods/goodsRegister.html'

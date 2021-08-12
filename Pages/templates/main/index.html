@@ -56,11 +56,29 @@
   </script>
   <div class="ui divider"></div>
   <div class="content-header">
-    <p>Top 3</p>
-    <div class="ui violet two item menu">
-      <a class="item"> Home </a>
-      <a class="item"> Messages </a>
-    </div>
+    <p>서비스 소개</p>
+    <div><img style="width:1635px; height:895px;" src="{% static 'images/introduction/002.png' %}"/></div>
+    <div><img style="width:1635px; height:895px;" src="{% static 'images/introduction/003.png' %}"/></div>
+    <div><img style="width:1635px; height:895px;" src="{% static 'images/introduction/001.png' %}"/></div>
   </div>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+        // 슬라이드를 버튼으로 움직일 수 있습니다.
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+
+        // 현재 페이지를 나타내는 점이 생깁니다. 클릭하면 이동합니다.
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets'
+        },
+        // 3초마다 자동으로 슬라이드가 넘어갑니다. 1초 = 1000
+        autoplay: {
+            delay: 3000
+        }
+    });
+  </script>
   {% endblock %}
 </body>
