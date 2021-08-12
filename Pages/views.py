@@ -12,9 +12,6 @@ def index(request):
 
 def purchase(request):
     return render(request, 'goods/purchase.html')
-
-def register(request):
-    return render(request, 'goods/goodsRegister.html')
 # review 테스트중
 def review(request):
     return render(request, 'review/review-post.html');
@@ -30,9 +27,6 @@ def reviewComplete(request):
 def userInformation(request):
     return render(request, 'login/input-user-information.html')
     return render(request, 'login/input-user-information.html')
-
-def signup(request):
-    return render(request, 'signup/signup.html')
 
 def goodsDetail(request):
     return render(request, 'goods/goodsDetail.html')

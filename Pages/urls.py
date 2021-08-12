@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 from django.contrib.auth import views
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView
 
 urlpatterns = [
     path('noticeBoard/', noticeBoard, name="noticeBoard"),
@@ -36,7 +36,7 @@ urlpatterns = [
     path('complete1/', registerComplete, name="registerComplete"),
     # 리뷰등록 완료 페이지
     path('complete2/', reviewComplete, name="reviewComplete"),
-    path('login/', views.LoginView.as_view(template_name='login/login.html'), name="loginIndex"),
+    path('login/', UserLoginView.as_view(), name="loginIndex"),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     # 신청 완료 페이지
     path('complete3/', applyComplete, name="applyComplete"),

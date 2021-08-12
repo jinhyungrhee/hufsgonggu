@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login
+from django.http import request
 from django.shortcuts import redirect, render
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -8,12 +9,16 @@ from .models import Product, Review
 from .forms import RegisterForm, UserForm
 from .models import Product, Review, Apply
 from .forms import RegisterForm
-
+from django.contrib.auth.views import LoginView
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 class ProductList(ListView):
     model = Product
     template_name = 'goods/goodsList.html'
 
-class ProductCreate(CreateView):
+class ProductCreate(LoginRequiredMixin, CreateView):
+    login_url = '/login/'
+    redirect_field_name = ''
     model = Product
     fields = '__all__'
     template_name = 'goods/goodsRegister.html'
@@ -54,6 +59,13 @@ def signup(request):
     else:
         form = UserForm()
     return render(request, 'signup/signup.html')
+
+class UserLoginView(LoginView):
+    template_name = 'login/login.html'
+
+    def form_invalid(self, form):
+        messages.error(self.request, '로그인에 실패하였습니다.')
+        return super().form_invalid(form)
 
 class GoodsDetail(DetailView):
     model = Product # queryset = Product.objects.all()과 동일

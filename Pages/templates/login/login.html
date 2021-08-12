@@ -34,6 +34,11 @@
                     placeholder="비밀번호를 입력해주세요."
                 />
             </li>
+            {% if messages %}
+            {% for message in messages %}
+                <span style="color: red; font-size:bold;">{{ message }}</span>
+            {% endfor %}
+            {% endif %}
             <div class="loginBox--save">
                 <span class="loginBox--saveId">
                     <input type="radio" />
