@@ -1,19 +1,13 @@
-<<<<<<< HEAD
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
-=======
 from django.shortcuts import render, get_object_or_404
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
 from django.urls import reverse_lazy
 from django.views.generic import FormView, CreateView, ListView, DetailView
 from django.views.generic.list import MultipleObjectMixin
-<<<<<<< HEAD
 from .models import Product, Review
 from .forms import RegisterForm, UserForm
-=======
 from .models import Product, Review, Apply
 from .forms import RegisterForm
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
 
 class ProductList(ListView):
     model = Product
@@ -43,7 +37,6 @@ class ReviewCreate(CreateView):
         self.object = None
         return super().post(request, *args, **kwargs)
 
-<<<<<<< HEAD
 def signup(request):
     # 계정 생성
     if request.method == "POST":
@@ -61,7 +54,6 @@ def signup(request):
     else:
         form = UserForm()
     return render(request, 'signup/signup.html')
-=======
 class GoodsDetail(DetailView):
     model = Product # queryset = Product.objects.all()과 동일
     template_name = 'goods/goodsDetail.html'
@@ -83,4 +75,3 @@ class ApplyCreate(CreateView):
     def post(self, request, *args, **kwargs):
         self.object = None
         return super().post(request, *args, **kwargs)
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869

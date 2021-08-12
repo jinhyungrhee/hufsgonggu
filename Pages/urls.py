@@ -16,13 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-<<<<<<< HEAD
 from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, signup
 from django.contrib.auth import views
 
-=======
 from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
 
 urlpatterns = [
     path('noticeBoard/', noticeBoard, name="noticeBoard"),
@@ -41,13 +38,9 @@ urlpatterns = [
     path('complete1/', registerComplete, name="registerComplete"),
     # 리뷰등록 완료 페이지
     path('complete2/', reviewComplete, name="reviewComplete"),
-<<<<<<< HEAD
     path('login/', views.LoginView.as_view(template_name='login/login.html'), name="loginIndex"),
-=======
     # 신청 완료 페이지
     path('complete3/', applyComplete, name="applyComplete"),
-    path('loginIndex/', loginIndex, name="loginIndex"),
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
     path('userInformation/', userInformation, name="userInformation"),
     path('signup/', signup, name="signup"),
     # 상품 상세보기

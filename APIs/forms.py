@@ -1,17 +1,13 @@
 from django import forms
-<<<<<<< HEAD
 from django.forms import fields
 from .models import Product
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-=======
 from .models import Product, Review
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
 
 # 일단 사용 X
 # 일단은 formView대신 CreateView 사용해서 상품입력 완성했음
 
-<<<<<<< HEAD
 class RegisterForm(forms.ModelForm):
     class Meta:
         model = Product
@@ -26,7 +22,6 @@ class UserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "password1", "password2", "email", "nickname", "kakaoId"]
-=======
 class RegisterForm(forms.Form):
 
     def __init__(self, request, *args, **kwargs):
@@ -61,4 +56,3 @@ class RegisterForm(forms.Form):
             self.add_error('price', '값이 없습니다.')
             self.add_error('description', '값이 없습니다.')
             self.add_error('image', '값이 없습니다.')
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869

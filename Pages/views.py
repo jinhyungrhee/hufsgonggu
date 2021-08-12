@@ -28,9 +28,7 @@ def reviewComplete(request):
     return render(request, 'complete/review-complete.html')
 
 def userInformation(request):
-<<<<<<< HEAD
     return render(request, 'login/input-user-information.html')
-=======
     return render(request, 'login/input-user-information.html')
 
 def signup(request):
@@ -48,4 +46,3 @@ def submitComplete(request):
 # 신청 완료 페이지
 def applyComplete(request):
     return render(request, 'complete/apply-complete.html')
->>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
