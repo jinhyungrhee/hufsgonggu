@@ -24,13 +24,14 @@
     </div>
     <div class="detailBox">
         <article class="detailBox--body">
-            <header class="detailBox--name">Boo 인형</header>
+            <header class="detailBox--name">{{ product.name }}</header>
             <p class="detailBox--article">
                 <img
-                    src="{% static 'images/banner/banner1.png' %}"
+                    src="{{ product.image.url }}"
                     height="80%"
                     width="100%"
                 />
+                <!--
                 <img
                     src="{% static 'images/banner/banner1.png' %}"
                     height="80%"
@@ -41,33 +42,25 @@
                     height="80%"
                     width="100%"
                 />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                asperiores velit laborum reiciendis itaque, ipsum architecto
-                facilis maiores odit, deleniti consectetur assumenda, nisi
-                blanditiis dicta illo labore. Eveniet, voluptatem atque. Neque a
-                nisi, laudantium quae expedita earum cumque! Id accusamus
-                numquam natus quia quidem, totam odit unde cumque eos,
-                distinctio corporis saepe inventore repudiandae illo nobis
-                dolores soluta temporibus. Possimus? Enim ea, eveniet ad debitis
-                sunt cumque. Blanditiis repellat animi voluptatum iure quae
-                tempora doloremque magnam ea veritatis reprehenderit quidem,
-                nihil dolorem necessitatibus, nobis deserunt neque explicabo
-                numquam voluptatibus consequatur!
+                -->
+                {{ product.description }}
             </p>
         </article>
         <section class="goodsInfo">
             <div class="goodsInfo--tags">
+                <button>{{ product.tag }}</button>
+                <!-- 일단 태그 하나만 사용...
                 <button>태그</button>
-                <button>태그</button>
+                -->
             </div>
             <!-- 데이터 받아오기 -->
             <div class="goodsInfo--crewPrice">
                 <header>모집인원</header>
-                <span>30명</span>
+                <span>{{ product.quantity }}명</span>
             </div>
             <div class="goodsInfo--crewPrice">
                 <header>가격</header>
-                <span>30000원</span>
+                <span>{{ product.price }}원</span>
             </div>
             <div class="ui violet progress"><div class="bar"></div></div>
 
@@ -82,7 +75,8 @@
                 <button>판매자 정보</button>
             </div>
             <div class="goodsInfo--submit">
-                <button type="submit">신청하기</button>
+                <!-- css cursor : pointer 필요 -->
+                <button type="submit" onclick="location.href='{% url 'purchase' %}'">신청하기</button>
             </div>
         </section>
     </div>

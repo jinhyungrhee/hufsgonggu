@@ -2,7 +2,7 @@
 <body>
   {% block content %}
   <div class="statusBar">
-    <button class="statusBar--homeBtn">H.GG</button>
+    <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">H.GG</button>
     <p class="statusBar--title">상품신청</p>
     <div class="statusBar--pageBtn__login">
       <button>상품등록</button>
@@ -12,13 +12,13 @@
   </div>
   <div class="form-box">
     <div class="appForm">
-      <form>
+      <form method="POST"> {% csrf_token %}
         <div class="appForm--list">
           <label>성명</label>
           <input
             autocomplete="off"
             type="text"
-            name="userName"
+            name="username"
             placeholder="이름을 입력해주세요."
           />
         </div>
@@ -27,7 +27,7 @@
           <input
             autocomplete="off"
             type="text"
-            name="goodsNum"
+            name="quantity"
             placeholder="수량을 입력해주세요."
           />
         </div>
@@ -44,18 +44,18 @@
         <div class="appForm--list">
           <label>수령 방법</label>
           <div class="appForm--list__option">
-            <input type="radio" id="direct" name="receive" />
+            <input type="radio" id="direct" name="receive" value="direct" />
             <label for="direct">대면 수령</label>
           </div>
           <div class="appForm--list__option">
-            <input type="radio" id="delivery" name="receive" />
+            <input type="radio" id="delivery" name="receive" value="delivery"/>
             <label for="delivery">택배 수령</label>
           </div>
         </div>
         <div class="appForm--list">
           <label>색상</label>
 
-          <select name="size">
+          <select name="color">
             <option value="">색상선택</option>
             <option value="red">자주색</option>
             <option value="beige">베이지색</option>
@@ -69,6 +69,7 @@
             autocomplete="off"
             type="text"
             placeholder="기타 요청사항을 적어주세요."
+            name="req"
           />
         </div>
         <button type="submit">신청하기</button>
