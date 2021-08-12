@@ -79,7 +79,8 @@
             <!-- ListView가 object_list context변수 전달-->
             {% for product in object_list %}
             <div class="goodsList--item">
-                <!-- image없을 때 에러처리 (이미지 required하면 없어도 될 듯) -->
+                <!-- product.id 받아서 보여주기 -->
+                <a href="{% url 'goodsDetail' product.id %}">
                 {% if product.image %}
                 <img
                     height="300px"
@@ -88,8 +89,10 @@
                     alt=""
                 />
                 <header class="goodsList--name">{{ product.name }}</header>
+                <header class="goodsList--name">{{ product.created_at | date:'Y-m-d' }} ~ {{ product.due_date | date:'Y-m-d' }}</header>
 
                 {% endif %}
+                </a>
             </div>
             {% endfor %}
         </div>
