@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate
 
 urlpatterns = [
     path('noticeBoard/', noticeBoard, name="noticeBoard"),
     path('noticePost/', noticePost, name="noticePost"),
     path('', index, name="index"),
-    path('purchase/', purchase, name="purchase"),
+    # 신청하기
+    path('purchase/', ApplyCreate.as_view(), name="purchase"),
     # 수정 : path('register/', register, name="register"),
     path('register/', ProductCreate.as_view(), name='register'),
     # 상품리스트 보여주기
@@ -34,10 +35,13 @@ urlpatterns = [
     path('complete1/', registerComplete, name="registerComplete"),
     # 리뷰등록 완료 페이지
     path('complete2/', reviewComplete, name="reviewComplete"),
+    # 신청 완료 페이지
+    path('complete3/', applyComplete, name="applyComplete"),
     path('loginIndex/', loginIndex, name="loginIndex"),
     path('userInformation/', userInformation, name="userInformation"),
     path('signup/', signup, name="signup"),
-    path('goodsDetail/', goodsDetail, name="goodsDetail"),
+    # 상품 상세보기
+    path('goodsDetail/<int:pk>', GoodsDetail.as_view(), name="goodsDetail"),
     path('reviewBoard/', reviewBoard, name="reviewBoard"),
-    path('submitComplete/',submitComplete,name="submitComplete")
+    path('submitComplete/',submitComplete,name="submitComplete"),
 ]

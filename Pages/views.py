@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def noticeBoard(request):
@@ -44,3 +44,7 @@ def reviewBoard(request):
 
 def submitComplete(request):
     return render(request, 'complete/submit-complete.html')
+
+# 신청 완료 페이지
+def applyComplete(request):
+    return render(request, 'complete/apply-complete.html')
