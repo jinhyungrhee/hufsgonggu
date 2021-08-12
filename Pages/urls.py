@@ -46,4 +46,5 @@ urlpatterns = [
     path('goodsDetail/<int:pk>', GoodsDetail.as_view(), name="goodsDetail"),
     path('reviewBoard/', reviewBoard, name="reviewBoard"),
     path('submitComplete/',submitComplete,name="submitComplete"),
+    # 리뷰 자세히
 ]
