@@ -19,6 +19,11 @@ class UserForm(UserCreationForm):
     nickname = forms.CharField(max_length=256, label="닉네임")
     kakaoId = forms.CharField(max_length=256, label="카카오톡 ID")
 
+    def clean_username(self):
+        username = self.cleaned_data.get("username")
+        if User.objects.filter(username=username).exists():
+            raise forms.ValidationError("Username is not unique")
+        return username
     class Meta:
         model = User
         fields = ["username", "password1", "password2", "email", "nickname", "kakaoId"]

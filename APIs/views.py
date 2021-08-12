@@ -52,13 +52,12 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password2')
             user = authenticate(username=username, password=raw_password)
-
             login(request, user) #로그인
             return redirect('/')
 
     else:
         form = UserForm()
-    return render(request, 'signup/signup.html')
+    return render(request, 'signup/signup.html', {'form': form})
 
 class UserLoginView(LoginView):
     template_name = 'login/login.html'
