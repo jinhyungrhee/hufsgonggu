@@ -23,6 +23,15 @@ class Product(models.Model):
 
 # Review 테이블 정의
 class Review(models.Model):
+
+    SATIS_CHOICES = {
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5')
+    }
+
     title = models.CharField(max_length=256, verbose_name='제목')
     content = models.TextField(verbose_name='내용')
     image = models.ImageField(upload_to="review/", blank=True, null=True)
@@ -30,6 +39,7 @@ class Review(models.Model):
     store = models.CharField(max_length=20, verbose_name='업체')
     delivery = models.IntegerField(verbose_name='배송기간')
     price = models.IntegerField(verbose_name='가격')
+    satisfaction = models.CharField(max_length=10, choices=SATIS_CHOICES, verbose_name='만족도')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='등록날짜')
 
     def __str__(self):
@@ -62,6 +72,7 @@ class Apply(models.Model):
     address = models.CharField(max_length=50, verbose_name='주소', blank='True', null='True')
     color = models.CharField(max_length=20, choices=COLOR_CHOICES, verbose_name='색상', null='True')
     req = models.TextField(verbose_name='요청사항', blank='True', null='True')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='신청날짜')
 
     def __str__(self):
         return self.username

@@ -14,7 +14,7 @@ def purchase(request):
     return render(request, 'goods/purchase.html')
 # review 테스트중
 def review(request):
-    return render(request, 'review/review-post.html');
+    return render(request, 'review/review-post.html')
 
 # 상품등록완료
 def registerComplete(request):
@@ -25,7 +25,6 @@ def reviewComplete(request):
     return render(request, 'complete/review-complete.html')
 
 def userInformation(request):
-    return render(request, 'login/input-user-information.html')
     return render(request, 'login/input-user-information.html')
 
 def goodsDetail(request):

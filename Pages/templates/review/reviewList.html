@@ -80,7 +80,7 @@
     <!-- ListView가 object_list context변수 전달-->
     {% for review in object_list %}
     <div class="reviewBox">
-        <section class="reviewBox--item">
+        <section class="reviewBox--item" onclick="location.href='{% url 'index' %}'">
             <div class="reviewBox--Info">
                 <header>{{ review.title }}</header>
                 <span> 작성자 </span>
@@ -100,8 +100,8 @@
     </div>
     {% endfor %}
     <div id="reviewBtn">
-        <button href="{% url 'review' %}">
-            <a href="{% url 'review' %}">후기쓰기</a>
+        <button onclick="location.href='{% url 'review' %}'">
+            후기쓰기
         </button>
     </div>
 
