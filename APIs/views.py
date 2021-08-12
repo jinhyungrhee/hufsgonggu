@@ -54,6 +54,7 @@ def signup(request):
     else:
         form = UserForm()
     return render(request, 'signup/signup.html')
+
 class GoodsDetail(DetailView):
     model = Product # queryset = Product.objects.all()과 동일
     template_name = 'goods/goodsDetail.html'

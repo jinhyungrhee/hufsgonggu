@@ -10,7 +10,11 @@
     <!-- 버튼위치관련 -->
     <div class="statusBar--pageBtn">
       <button onclick="location.href='{% url 'register' %}'">상품등록</button>
-      <button onclick="location.href='{% url 'loginIndex' %}'">로그인</button>
+      {% if user.is_authenticated %}
+        <button onclick="location.href='{% url 'logout' %}'">로그아웃</button>
+      {% else %}
+        <button onclick="location.href='{% url 'loginIndex' %}'">로그인</button>
+      {% endif %}
     </div>
   </div>
 
