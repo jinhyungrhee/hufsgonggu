@@ -22,14 +22,15 @@
             </button>
         </div>
     </div>
-
     <div class="menubar">
         <div
             class="ui violet three item inverted menu"
             style="background-color: #6524ff"
         >
-            <a class="active item" href="{% url 'productList' %}"> 상품게시판 </a>
-            <a class="item" href="{% url 'reviewList' %}"> 후기게시판 </a>
+            <a class="active item" href="{% url 'productList' %}">
+                상품게시판
+            </a>
+            <a class="item"> 후기게시판 </a>
             <a class="item" href="{% url 'noticeBoard' %}"> 공지사항 </a>
         </div>
         <div class="swiper-container">
@@ -66,36 +67,29 @@
     </script>
     <div class="ui divider"></div>
     <div class="content-header">
-        <!-- Top3 제거 -->
+        <p>카테고리</p>
         <div class="ui violet two item menu">
             <a class="item"> Home </a>
             <a class="item"> Messages </a>
         </div>
     </div>
-    <!-- todo : anchor 삽입 -->
-    <div class="goodsBox">
-        <div class="goodsList">
-            <!-- DB에 저장된 내용 for문으로 가져오기 -->
-            <!-- ListView가 object_list context변수 전달-->
-            {% for product in object_list %}
-            <div class="goodsList--item">
-                <!-- product.id 받아서 보여주기 -->
-                <a href="{% url 'goodsDetail' product.id %}">
-                {% if product.image %}
-                <img
-                    height="300px"
-                    width="250px"
-                    src="{{ product.image.url }}"
-                    alt=""
-                />
-                <header class="goodsList--name">{{ product.name }}</header>
-                <header class="goodsList--name">{{ product.created_at | date:'Y-m-d' }} ~ {{ product.due_date | date:'Y-m-d' }}</header>
-
-                {% endif %}
-                </a>
-            </div>
-            {% endfor %}
-        </div>
+    <div class="reviewBox">
+        <section class="reviewBox--item">
+            <p>
+                <header>후기 게시물 제목</header>
+                <span>작성자</span>
+            </p>
+            <div class="score">
+                <i class="far fa-star fa-xs "></i>
+                <i class="far fa-star fa-xs"></i>
+                <i class="far fa-star fa-xs"></i>
+                <i class="far fa-star fa-xs"></i>
+                <i class="far fa-star fa-xs"></i>
+              </div>
+        </section>
+        <section class="reviewBox--item"></section>
+        <section class="reviewBox--item"></section>
+        <section class="reviewBox--item"></section>
     </div>
     {% endblock %}
 </body>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def noticeBoard(request):
@@ -28,4 +28,24 @@ def reviewComplete(request):
     return render(request, 'complete/review-complete.html')
 
 def userInformation(request):
+<<<<<<< HEAD
     return render(request, 'login/input-user-information.html')
+=======
+    return render(request, 'login/input-user-information.html')
+
+def signup(request):
+    return render(request, 'signup/signup.html')
+
+def goodsDetail(request):
+    return render(request, 'goods/goodsDetail.html')
+
+def reviewBoard(request):
+    return render(request, 'review/review-board.html')
+
+def submitComplete(request):
+    return render(request, 'complete/submit-complete.html')
+
+# 신청 완료 페이지
+def applyComplete(request):
+    return render(request, 'complete/apply-complete.html')
+>>>>>>> f95557b22af15d538e32028c9e453d27acd3b869
