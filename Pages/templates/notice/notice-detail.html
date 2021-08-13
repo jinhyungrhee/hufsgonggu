@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %} {% load static %}
+<body>
+    {% block content %}
+    <div class="statusBar">
+        <button
+            class="statusBar--homeBtn"
+            onclick="location.href='{% url 'index' %}'"
+        >
+            H.GG
+        </button>
+        <div class="ui icon input" style="width: 40%">
+            <input type="text" placeholder="Search..." />
+            <i class="circular search link icon"></i>
+        </div>
+        <!-- 버튼위치관련 -->
+        <div class="statusBar--pageBtn">
+            <button onclick="location.href='{% url 'register' %}'">
+                상품등록
+            </button>
+            <button onclick="location.href='{% url 'loginIndex' %}'">
+                로그인
+            </button>
+        </div>
+    </div>
+    <div class="noticeBox">
+        <article class="noticeBox--body">
+            <header class="noticeBox--name">런칭이벤트!{{ notice.name }}</header>
+            <!-- 이 피에지는 공지사항 글쓴 데이터를 받는것으로 잘 해주십쇼-->
+            <p class="noticeBox--writer">작성자 김외대</p>
+            <p class="noticeBox--createDate">작성시간</p>
+            <p class="noticeBox--article">
+                <img
+                    src="{{ notice.image.url }}"
+                    height="80%"
+                    width="100%"
+                />
+                <!--
+                <img
+                    src="{% static 'images/banner/banner1.png' %}"
+                    height="80%"
+                    width="100%"
+                />
+                <img
+                    src="{% static 'images/banner/banner1.png' %}"
+                    height="80%"
+                    width="100%"
+                />
+                -->
+                    {{ notice.description }}
+                    ㅇㅇㅇㅇ아무말 대잔치adfafasfasfasfafa
+                    fsafdafaadfafadfa
+            </p>
+        </article>
+            <!-- 데이터 받아오기 -->
+    </div>
+    {% endblock %}
+</body>

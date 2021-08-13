@@ -4,6 +4,10 @@ from django.shortcuts import render, get_object_or_404
 def noticePost(request):
     return render(request, 'notice/notice-post.html')
 
+#공지사항 디테일
+def noticeDetail(request):
+    return render(request, 'notice/notice-detail.html')
+
 def index(request):
     return render(request, 'main/index.html')
 
