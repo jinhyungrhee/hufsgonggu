@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 from django.contrib.auth import views
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list, ReviewDetail, post_detail
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list, ReviewDetail, post_detail, searchResult
 
 
 urlpatterns = [
@@ -51,4 +51,6 @@ urlpatterns = [
     path('submitComplete/',submitComplete,name="submitComplete"),
     # 리뷰 자세히
     path('reviewDetail/<int:pk>', ReviewDetail.as_view(), name="reviewDetail"),
+    # 검색 기능
+    path('search/', searchResult, name='search'),
 ]

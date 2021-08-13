@@ -3,7 +3,7 @@
   {% block content %}
   <div class="statusBar">
     <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">H.GG</button>
-    <form  style="width: 40%" action="" method="get">
+    <form  style="width: 40%" action="{% url 'search' %}" method="get">
       {% csrf_token %}
       <div class="ui icon input">
         <input type="text" placeholder="상품명을 검색해주세요." name="q"/>
