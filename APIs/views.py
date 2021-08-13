@@ -43,6 +43,18 @@ class ReviewCreate(CreateView):
         self.object = None
         return super().post(request, *args, **kwargs)
 
+class ReviewDetail(DetailView):
+    model = Review # queryset = Product.objects.all()과 동일
+    template_name = 'review/reviewDetail.html'
+    context_object_name = "review"
+
+    # pk 가져오기
+    def get_context_data(self, **kwargs):
+        #생성된 context는 Template으로 전달됨
+        context = super().get_context_data(**kwargs)
+        #context['prodcut_list'] = Product.objects.filter()
+        return context
+
 def signup(request):
     # 계정 생성
     if request.method == "POST":
