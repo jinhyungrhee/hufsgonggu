@@ -14,6 +14,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.db.models import Q
 class ProductList(ListView):
     model = Product
     template_name = 'goods/goodsList.html'
@@ -74,7 +75,6 @@ def signup(request):
 
 class UserLoginView(LoginView):
     template_name = 'login/login.html'
-
     def form_invalid(self, form):
         messages.error(self.request, '로그인에 실패하였습니다.')
         return super().form_invalid(form)
@@ -130,3 +130,13 @@ def post_write(request):
             return redirect(reverse('post_detail', kwargs={'post_id':post.id}))
 
     return render(request, 'notice/notice-post.html', {'errors':errors})
+
+#상품 검색 기능 API
+def searchResult(request):
+    products = None
+    query = None
+    if 'q' in request.GET:
+        query = request.GET.get('q')
+        products = Product.objects.all().filter(Q(name__contains=query) | Q(description__contains=query))
+    
+    return render(request, '', {'query':query, 'products':products})

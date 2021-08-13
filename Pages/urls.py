@@ -38,7 +38,7 @@ urlpatterns = [
     # 리뷰등록 완료 페이지
     path('complete2/', reviewComplete, name="reviewComplete"),
     path('login/', UserLoginView.as_view(), name="loginIndex"),
-    path('logout/', views.LogoutView.as_view(), name='logout'),
+    path('accout/logout/', views.LogoutView.as_view(), name='logout'),
     # 신청 완료 페이지
     path('complete3/', applyComplete, name="applyComplete"),
     path('userInformation/', userInformation, name="userInformation"),
