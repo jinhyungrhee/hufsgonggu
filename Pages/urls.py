@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 from django.contrib.auth import views
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list
+
 
 urlpatterns = [
-    path('noticeBoard/', noticeBoard, name="noticeBoard"),
+    path('noticeBoard/', posts_list, name="noticeBoard"),
     path('noticePost/', noticePost, name="noticePost"),
     path('', index, name="index"),
     # 신청하기

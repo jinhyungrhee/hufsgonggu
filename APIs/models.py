@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 # Product 테이블 정의
 class Product(models.Model):
@@ -81,3 +81,19 @@ class Apply(models.Model):
         db_table = 'apply'
         verbose_name = '신청'
         verbose_name_plural = '신청'
+
+class Post(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='작성자')
+    title = models.CharField(max_length=255, verbose_name='제목',blank=False)
+    content = models.TextField()
+    image = models.ImageField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'post'
+        verbose_name = '게시글'
+        verbose_name_plural = '게시글'

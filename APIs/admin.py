@@ -1,5 +1,5 @@
 from django.contrib import admin
-from APIs.models import Product, Review, Apply
+from APIs.models import Product, Review, Apply, Post
 
 # Register your models here.
 @admin.register(Product) # 데코레이터 - register함수 대신 사용
@@ -16,3 +16,7 @@ class ReviewAdmin(admin.ModelAdmin):
 @admin.register(Apply)
 class ApplyAdmin(admin.ModelAdmin):
     list_display = ('username', 'quantity', 'size', 'receive', 'address', 'color', 'req', 'created_at')
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('user', 'title', 'content', 'image', 'created_at', 'modified_at')

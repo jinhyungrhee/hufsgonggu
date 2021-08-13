@@ -7,11 +7,13 @@ from django.views.generic import FormView, CreateView, ListView, DetailView
 from django.views.generic.list import MultipleObjectMixin
 from .models import Product, Review
 from .forms import RegisterForm, UserForm
-from .models import Product, Review, Apply
+from .models import Product, Review, Apply, Post
 from .forms import RegisterForm
 from django.contrib.auth.views import LoginView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+from django.urls import reverse
 class ProductList(ListView):
     model = Product
     template_name = 'goods/goodsList.html'
@@ -86,3 +88,33 @@ class ApplyCreate(CreateView):
     def post(self, request, *args, **kwargs):
         self.object = None
         return super().post(request, *args, **kwargs)
+
+#공지사항 관련 API
+def posts_list(request):
+    posts = Post.objects.all()
+    return render(request, 'notice/notice-board.html', context={'posts':posts})
+
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    return render(request, 'notice/notice-detail.html', context={'post':post })
+
+def post_write(request):
+    errors = []
+    if request.method =='POST':
+        user = User.objects.get(email=(request.session.get('user')))
+        title = request.POST.get('title', '').strip()
+        content = request.POST.get('content', '').strip()
+        image = request.FILES.get('image')
+
+        if not title:
+            errors.append("제목을 입력해주세요.")
+
+        if not content:
+            errors.append("내용을 입력해주세요.")
+
+        if not errors:
+            post = Post.objects.create(user=user, title=title, content=content, image=image)
+            return redirect(reverse('post_detail', kwargs={'post_id':post.id}))
+
+    return render(request, 'notice/notice-post.html', {'errors':errors})
