@@ -1,34 +1,89 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 <body>
     {% block content %}
-        <div class="statusBar">
-            <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">
-                H.GG
-            </button>
-        </div>
-        <form method="post" action="{% url 'signup' %}" id="registerBox">
-            {% csrf_token %}
-            <fieldset>
-                {% for field in form %}
-                    {{ field.errors }}
-                    <div class="registerBox--list">
-                        <label for="{{ field.id_for_label }}">{{field.label}}</label>
-                        <input
-                            style="border: 2px solid #6524FF"
-                            required="required"
-                            type="{{ field.field.widget.input_type }}"
-                            class="form-control"
-                            id="{{field.id_for_label}}"
-                            placeholder="{{field.label}}"
-                            name="{{field.name}}를 입력해주세요."/>
-                    </div>
-                {% endfor %}
-            </fieldset>
-            <button id="registerBtn">
-                <i class="fas fa-check xs"></i>회원가입
-            </button>
-        </form>
+    <div class="statusBar">
+        <button
+            class="statusBar--homeBtn"
+            onclick="location.href='{% url 'index' %}'"
+        >
+            H.GG
+        </button>
+    </div>
+    <form method="post" action="{% url 'signup' %}" id="registerBox">
+        {% csrf_token %}
+        <fieldset>
+            <div class="registerBox--list">
+                <label for="email">이메일 작성</label>
+                <input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    value="{{ form.email.value|default_if_none:'' }}"
+                    placeholder="example@example.com"
+                />
+            </div>
+            <div class="registerBox--list">
+                <label for="username">이름</label>
+                <input
+                    required
+                    type="text"
+                    name="username"
+                    id="username"
+                    value="{{ form.username.value|default_if_none:'' }}"
+                    placeholder="이름을 입력해주세요."
+                />
+            </div>
+
+            <div class="registerBox--list">
+                <label for="password1">비밀번호 설정</label>
+                <input
+                    required
+                    type="password"
+                    name="password1"
+                    id="password1"
+                    value="{{ form.password1.value|default_if_none:'' }}"
+                    placeholder="비밀번호를 입력해주세요."
+                />
+            </div>
+            <div class="registerBox--list">
+                <label for="password2">비밀번호 재입력</label>
+                <input
+                    type="password"
+                    name="password2"
+                    id="password2"
+                    value="{{ form.password2.value|default_if_none:'' }}"
+                    required
+                    placeholder="비밀번호를 다시 입력해주세요"
+                />
+            </div>
+            <div class="registerBox--list">
+                <label for="nickname">닉네임</label>
+                <input
+                    required
+                    type="text"
+                    name="nickname"
+                    id="nickname"
+                    value="{{ form.nickname.value|default_if_none:'' }}"
+                    placeholder="닉네임을 입력해주세요."
+                />
+            </div>
+            <div class="registerBox--list">
+                <label for="kakaoId">카카오톡 ID</label>
+                <input
+                    required
+                    type="text"
+                    name="kakaoId"
+                    id="kakaoId"
+                    value="{{ form.kakaoId.value|default_if_none:'' }}"
+                    placeholder="카카오톡 ID를 입력해주세요."
+                />
+            </div>
+        </fieldset>
+        <button id="registerBtn">
+            <i class="fas fa-check xs"></i>회원가입
+        </button>
+    </form>
 
     {% endblock %}
 </body>
