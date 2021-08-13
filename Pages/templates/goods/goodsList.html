@@ -6,10 +6,13 @@
             <button class="statusBar--homeBtn" onclick="location.href='{% url 'index' %}'">
                 H.GG
             </button>
-            <div class="ui icon input" style="width: 40%">
-                <input type="text" placeholder="Search..."/>
-                <i class="circular search link icon"></i>
-            </div>
+            <form  style="width: 40%" action="{% url 'search' %}" method="get">
+                {% csrf_token %}
+                <div class="ui icon input">
+                  <input type="text" placeholder="상품명을 검색해주세요." name="q"/>
+                  <i onclick="location.href='{% url 'search' %}'" class="circular search link icon"></i>
+                </div>
+              </form>
             <!-- 버튼위치관련 -->
             <div class="statusBar--pageBtn">
                 <button onclick="location.href='{% url 'register' %}'">
