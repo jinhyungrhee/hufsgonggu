@@ -40,6 +40,7 @@ class Review(models.Model):
     delivery = models.IntegerField(verbose_name='배송기간')
     price = models.IntegerField(verbose_name='가격')
     satisfaction = models.CharField(max_length=10, choices=SATIS_CHOICES, verbose_name='만족도')
+    # 작성자 정보 추가 필요
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='등록날짜')
 
     def __str__(self):

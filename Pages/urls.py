@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 from django.contrib.auth import views
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list, ReviewDetail
 
 
 urlpatterns = [
@@ -48,4 +48,5 @@ urlpatterns = [
     path('reviewBoard/', reviewBoard, name="reviewBoard"),
     path('submitComplete/',submitComplete,name="submitComplete"),
     # 리뷰 자세히
+    path('reviewDetail/<int:pk>', ReviewDetail.as_view(), name="reviewDetail"),
 ]
