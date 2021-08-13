@@ -62,22 +62,22 @@
         </div>
     </div>
     <script>
-        var mySwiper = new Swiper('.swiper-container', {
+        var mySwiper = new Swiper(".swiper-container", {
             // 슬라이드를 버튼으로 움직일 수 있습니다.
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
-    
+
             // 현재 페이지를 나타내는 점이 생깁니다. 클릭하면 이동합니다.
             pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets'
+                el: ".swiper-pagination",
+                type: "bullets",
             },
             // 3초마다 자동으로 슬라이드가 넘어갑니다. 1초 = 1000
             autoplay: {
-                delay: 3000
-            }
+                delay: 3000,
+            },
         });
     </script>
     <div class="ui divider"></div>
@@ -88,10 +88,20 @@
     <!-- ListView가 object_list context변수 전달-->
     {% for review in object_list %}
     <div class="reviewBox">
-        <section class="reviewBox--item" onclick="location.href='{% url 'index' %}'">
+        <section
+            class="reviewBox--item"
+            onclick="location.href='{% url 'index' %}'"
+        >
             <div class="reviewBox--Info">
                 <header>{{ review.title }}</header>
                 <span> 작성자 </span>
+                <div class="reviewBox--scoreBox">
+                    <i class="far fa-star fa-1x"></i>
+                    <i class="far fa-star fa-1x"></i>
+                    <i class="far fa-star fa-1x"></i>
+                    <i class="far fa-star fa-1x"></i>
+                    <i class="fas fa-star fa-1x"></i>
+                </div>
             </div>
             {% if review.image %}
             <div id="reviewBox--Img">
@@ -108,9 +118,7 @@
     </div>
     {% endfor %}
     <div id="reviewBtn">
-        <button onclick="location.href='{% url 'review' %}'">
-            후기쓰기
-        </button>
+        <button onclick="location.href='{% url 'review' %}'">후기쓰기</button>
     </div>
 
     {% endblock %}

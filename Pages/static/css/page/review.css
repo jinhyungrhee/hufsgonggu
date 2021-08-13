@@ -82,3 +82,7 @@
 #reviewBtn > button > a {
     color: white;
 }
+
+.reviewBox--scoreBox {
+    margin-top: 3rem;
+}
