@@ -22,6 +22,8 @@ from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, Goo
 urlpatterns = [
     path('noticeBoard/', noticeBoard, name="noticeBoard"),
     path('noticePost/', noticePost, name="noticePost"),
+    #공지사항 디테일
+    path('noticeDetail/', noticeDetail, name="noticeDetail"),
     path('', index, name="index"),
     # 신청하기
     path('purchase/', ApplyCreate.as_view(), name="purchase"),

@@ -7,6 +7,10 @@ def noticeBoard(request):
 def noticePost(request):
     return render(request, 'notice/notice-post.html')
 
+#공지사항 디테일
+def noticeDetail(request):
+    return render(request, 'notice/notice-detail.html')
+
 def index(request):
     return render(request, 'main/index.html')
 
