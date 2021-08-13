@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 from django.contrib.auth import views
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list, ReviewDetail
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list, ReviewDetail, post_detail
 
 
 urlpatterns = [
     path('noticeBoard/', posts_list, name="noticeBoard"),
     path('noticePost/', noticePost, name="noticePost"),
     #공지사항 디테일
-    path('noticeDetail/', noticeDetail, name="noticeDetail"),
+    path('noticeDetail/<int:post_id>', post_detail, name="noticeDetail"),
     path('', index, name="index"),
     # 신청하기
     path('purchase/', ApplyCreate.as_view(), name="purchase"),

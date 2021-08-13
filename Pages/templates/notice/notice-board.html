@@ -22,7 +22,7 @@
       {% for post in posts %}
         <section class="notice-board--line">
           <p class="notice-board--line__small">{{ post.id }}</p>
-          <a class="notice-board--line__title" href="notice-post.html">
+          <a class="notice-board--line__title" href="{% url 'noticeDetail' post.id %}">
             {{ post.title }}
           </a>
           <p class="notice-board--line__small">{{ post.created_at }}</p>
