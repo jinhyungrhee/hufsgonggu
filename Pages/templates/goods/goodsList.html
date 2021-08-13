@@ -87,17 +87,20 @@
                 <!-- DB에 저장된 내용 for문으로 가져오기 -->
                 <!-- ListView가 object_list context변수 전달-->
                 {% for product in object_list %}
-                    <div class="goodsList--item">
+                    <div class="card">
                         <!-- product.id 받아서 보여주기 -->
-                        <a href="{% url 'goodsDetail' product.id %}">
+                        <a href="{% url 'goodsDetail' product.id %}" style="text-decoration: none; text-align: center;">
+                            <div class="card-header" style="background-color: #6524ff; color: white; font-weight: bold;">
+                                {{ product.name }}
+                            </div>
                             {% if product.image %}
                                 <img height="300px" width="250px" src="{{ product.image.url }}" alt=""/>
-                                <header class="goodsList--name">{{ product.name }}</header>
-                                <header class="goodsList--name">{{ product.created_at | date:'Y-m-d' }}
-                                    ~
-                                    {{ product.due_date | date:'Y-m-d' }}</header>
-
                             {% endif %}
+                            <div class="card-body">
+                                <p class="card-text">
+                                    공구기간 : {{ product.created_at | date:'Y-m-d' }}~{{ product.due_date | date:'Y-m-d' }}
+                                </p>
+                            </div>
                         </a>
                     </div>
                 {% endfor %}

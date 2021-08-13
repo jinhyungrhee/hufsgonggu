@@ -18,18 +18,18 @@
         <p class="notice-board--line__title">제목</p>
         <p class="notice-board--line__small">날짜</p>
         <p class="notice-board--line__small">작성자</p>
-        <p class="notice-board--line__small">조회수</p>
       </section>
-      <section class="notice-board--line">
-        <p class="notice-board--line__small">1</p>
-        <a class="notice-board--line__title" href="notice-post.html">
-          [공지사항] H.GG 좋아요 기능 업데이트!
-        </a>
-        <p class="notice-board--line__small">2021-06-12</p>
-        <p class="notice-board--line__small">관리자</p>
-        <p class="notice-board--line__small">12</p>
-      </section>
-      <section class="notice-board--line">
+      {% for post in posts %}
+        <section class="notice-board--line">
+          <p class="notice-board--line__small">{{ post.id }}</p>
+          <a class="notice-board--line__title" href="notice-post.html">
+            {{ post.title }}
+          </a>
+          <p class="notice-board--line__small">{{ post.created_at }}</p>
+          <p class="notice-board--line__small">{{ post.user }}</p>
+        </section>
+      {% endfor %}
+      <!-- <section class="notice-board--line">
         <p class="notice-board--line__small">2</p>
         <a class="notice-board--line__title" href="notice-post.html"
           >[공지사항] 서버 점검 공지</a
@@ -64,7 +64,7 @@
         <p class="notice-board--line__small">2021-06-16</p>
         <p class="notice-board--line__small">관리자</p>
         <p class="notice-board--line__small">33</p>
-      </section>
+      </section> -->
 
       <div class="page-order">
         <svg

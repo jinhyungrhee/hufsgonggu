@@ -1,9 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-def noticeBoard(request):
-    return render(request,'notice/notice-board.html')
-
 def noticePost(request):
     return render(request, 'notice/notice-post.html')
 

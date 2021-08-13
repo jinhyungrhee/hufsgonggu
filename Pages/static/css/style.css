@@ -13,6 +13,8 @@
 @import "page/goodsList.css";
 @import "page/goodsDetail.css";
 @import "page/noticeDetail.css";
+@import "page/goodsReviewDetail.css";
+@import "page/findId.css";
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 

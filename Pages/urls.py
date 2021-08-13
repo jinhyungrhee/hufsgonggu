@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from .views import *
 from django.contrib.auth import views
-from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView
+from APIs.views import ProductCreate, ProductList, ReviewCreate, ReviewList, GoodsDetail, ApplyCreate, signup, UserLoginView, posts_list, ReviewDetail
+
 
 urlpatterns = [
-    path('noticeBoard/', noticeBoard, name="noticeBoard"),
+    path('noticeBoard/', posts_list, name="noticeBoard"),
     path('noticePost/', noticePost, name="noticePost"),
     #공지사항 디테일
     path('noticeDetail/', noticeDetail, name="noticeDetail"),
@@ -39,7 +40,7 @@ urlpatterns = [
     # 리뷰등록 완료 페이지
     path('complete2/', reviewComplete, name="reviewComplete"),
     path('login/', UserLoginView.as_view(), name="loginIndex"),
-    path('logout/', views.LogoutView.as_view(), name='logout'),
+    path('accout/logout/', views.LogoutView.as_view(), name='logout'),
     # 신청 완료 페이지
     path('complete3/', applyComplete, name="applyComplete"),
     path('userInformation/', userInformation, name="userInformation"),
@@ -49,4 +50,5 @@ urlpatterns = [
     path('reviewBoard/', reviewBoard, name="reviewBoard"),
     path('submitComplete/',submitComplete,name="submitComplete"),
     # 리뷰 자세히
+    path('reviewDetail/<int:pk>', ReviewDetail.as_view(), name="reviewDetail"),
 ]
