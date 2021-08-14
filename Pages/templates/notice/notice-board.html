@@ -26,6 +26,28 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+  <div class="notice-board-outbox">
+    <div class="notice-board">
+      <section class="notice-board--line__summary">
+        <p class="notice-board--line__small">번호</p>
+        <p class="notice-board--line__title">제목</p>
+        <p class="notice-board--line__small">날짜</p>
+        <p class="notice-board--line__small">작성자</p>
+      </section>
+      {% for post in posts %}
+        <section class="notice-board--line">
+          <p class="notice-board--line__small">{{ post.id }}</p>
+          <a class="notice-board--line__title" href="{% url 'noticeDetail' post.id %}">
+            {{ post.title }}
+          </a>
+          <p class="notice-board--line__small">{{ post.created_at }}</p>
+          <p class="notice-board--line__small">{{ post.user }}</p>
+        </section>
+      
+      {% endfor %}
+      <!-- <section class="notice-board--line">
+=======
     <div class="notice-board-outbox">
         <div class="notice-board">
             <section class="notice-board--line__summary">
@@ -48,6 +70,7 @@
             </section>
             {% endfor %}
             <!-- <section class="notice-board--line">
+>>>>>>> 01da5c273dcc7f0b3e148c5ddbddc8278857887b
         <p class="notice-board--line__small">2</p>
         <a class="notice-board--line__title" href="notice-post.html"
           >[공지사항] 서버 점검 공지</a
@@ -113,5 +136,14 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+  </div>
+    <button class="postBtn"
+      onclick="location.href='{% url 'noticePost' %}'">
+      글쓰기
+    </button>
+  {% endblock %}
+=======
     {% endblock %}
+>>>>>>> 01da5c273dcc7f0b3e148c5ddbddc8278857887b
 </body>
