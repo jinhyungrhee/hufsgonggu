@@ -53,4 +53,5 @@ urlpatterns = [
     path('reviewDetail/<int:pk>', ReviewDetail.as_view(), name="reviewDetail"),
     # 검색 기능
     path('search/', searchResult, name='search'),
+
 ]

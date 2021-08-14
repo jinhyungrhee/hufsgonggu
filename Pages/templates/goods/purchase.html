@@ -9,10 +9,19 @@
             H.GG
         </button>
         <p class="statusBar--title">상품신청</p>
-        <div class="statusBar--pageBtn__login">
-            <button>상품등록</button>
-            <button>로그아웃</button>
-            <button>내 정보</button>
+        <div class="statusBar--pageBtn">
+            <button onclick="location.href='{% url 'register' %}'">
+                상품등록
+            </button>
+            {% if user.is_authenticated %}
+            <button onclick="location.href='{% url 'logout' %}'">
+                로그아웃
+            </button>
+            {% else %}
+            <button onclick="location.href='{% url 'loginIndex' %}'">
+                로그인
+            </button>
+            {% endif %}
         </div>
     </div>
     <div class="form-box">

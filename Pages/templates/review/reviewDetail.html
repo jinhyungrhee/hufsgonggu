@@ -20,9 +20,15 @@
             <button onclick="location.href='{% url 'register' %}'">
                 상품등록
             </button>
+            {% if user.is_authenticated %}
+            <button onclick="location.href='{% url 'logout' %}'">
+                로그아웃
+            </button>
+            {% else %}
             <button onclick="location.href='{% url 'loginIndex' %}'">
                 로그인
             </button>
+            {% endif %}
         </div>
     </div>
 
@@ -30,11 +36,7 @@
         <article class="reviewForm--body">
             <header class="reviewForm--name">{{ review.title }}</header>
             <p class="detailBox--article">
-                <img
-                    src="{{ review.image.url }}"
-                    height="80%"
-                    width="100%"
-                />
+                <img src="{{ review.image.url }}" height="80%" width="100%" />
                 {{ review.content }}
                 <!--
                 <img
@@ -80,47 +82,47 @@
             <tr>
                 <td class="text-color" style="padding-bottom: 1rem">만족도</td>
                 <td>
-                {% if review.satisfaction == '1' %}
-                <div class="reviewBox--scoreBox">
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                </div>
-                {% elif review.satisfaction == '2' %}
-                <div class="reviewBox--scoreBox">
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                </div>
-                {% elif review.satisfaction == '3' %}
-                <div class="reviewBox--scoreBox">
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                </div>
-                {% elif review.satisfaction == '4' %}
-                <div class="reviewBox--scoreBox">
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="far fa-star fa-1x"></i>
-                </div>
-                {% elif review.satisfaction == '5' %}
-                <div class="reviewBox--scoreBox">
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                    <i class="fas fa-star fa-1x"></i>
-                </div>
-                {% endif %}
+                    {% if review.satisfaction == '1' %}
+                    <div class="reviewBox--scoreBox">
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                    </div>
+                    {% elif review.satisfaction == '2' %}
+                    <div class="reviewBox--scoreBox">
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                    </div>
+                    {% elif review.satisfaction == '3' %}
+                    <div class="reviewBox--scoreBox">
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                    </div>
+                    {% elif review.satisfaction == '4' %}
+                    <div class="reviewBox--scoreBox">
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="far fa-star fa-1x"></i>
+                    </div>
+                    {% elif review.satisfaction == '5' %}
+                    <div class="reviewBox--scoreBox">
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                        <i class="fas fa-star fa-1x"></i>
+                    </div>
+                    {% endif %}
                 </td>
             </tr>
         </table>
